@@ -1,7 +1,5 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const request = require('request');
-const rp = require('request-promise');
 const axios = require('axios');
 
 const app = express();
@@ -37,21 +35,6 @@ app.post('/', async (req, res) => {
 		console.log(err);
 		res.render('index', {weather: null, error: 'Error, please try again!'});
 	}
-	/*
-	request(options, (err, response, body) => {
-		if (err) {
-			res.render('index', {weather: null, error: 'Error, please try again!'});
-			return;
-		}
-		let weather = JSON.parse(body);
-		if (weather.main == undefined) {
-			res.render('index', {weather: null, error: 'Error, please try again!'});
-			return;
-		}
-		let weatherText = `It's ${weather.main.temp} degrees in ${weather.name}!`;
-		res.render('index', {weather: weatherText, error: null});
-	});
-	*/
 });
 
 app.listen(PORT, HOST, () => {
