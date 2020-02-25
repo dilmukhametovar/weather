@@ -27,9 +27,9 @@ app.post('/', async (req, res) => {
 	}
 	try {
 		let data = (await axios.get(url, options)).data;
-		console.log(data)
+		console.log(data.name);
 		if (data == undefined) throw new Error();
-		let weatherText = `It's ${data.main.temp} degrees in ${data.name}!`;
+		let weatherText = `${data.main.temp} °C in ${data.name}!`;
 		res.render('index', {weather: weatherText, error: null});
 	} catch (err) {
 		console.log(err);
