@@ -1,3 +1,2 @@
 # weather
-node.js app
-simple web app uses OpenWeatherMap API
+simple node.js app based on OpenWeatherMap API
